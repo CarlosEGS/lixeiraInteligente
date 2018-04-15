@@ -1,0 +1,26 @@
+{
+  "name": "piiv",
+  "version": "0.0.1",
+  "description": "prototipo",
+  "main": "index.js",
+  "scripts": {
+    "test": "istanbul cover node_modules/mocha/bin/_mocha -- --compilers js:babel-core/register"
+  },
+  "author": "Nathan",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "body-parser": "^1.18.2",
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "express-validator": "^4.3.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^4.0.1",
+    "mocha-istanbul": "^0.3.0",
+    "mongoose": "^4.12.3",
+    "nyc": "^11.2.1"
+  }
+}
