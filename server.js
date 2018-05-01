@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/mydb');
+mongoose.connect('192.168.99.100:27017/mydb');
 
 var port = process.env.PORT || 8000;
 
