@@ -5,7 +5,6 @@ var mongoose = require('mongoose');
 var router = require('./Routes/router'); 
 var cors = require('cors');
 
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
