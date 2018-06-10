@@ -9,9 +9,11 @@ exports.CreateTrash = function (req, res) {
     trash.Descricao = req.body.descricao;
     trash.idAccount = req.body.idAccount;
     trash.Local = req.body.local;
+    trash.User = req.body.idAccount;
     console.log('trash: ' + trash);
 
     console.log('Buscando Usuário');
+    /*
     User.findOne({ email: trash.idAccount }).then(function (user) {
         console.log('USUARIO: ' + user.idAccount);
         trash.idAccount = user._id;
@@ -32,6 +34,8 @@ exports.CreateTrash = function (req, res) {
             })
         }
     });
+    */
+   trash.save();
 }
 
 exports.FindAllByIdAccount = function (req, res) {
@@ -43,6 +47,21 @@ exports.FindAllByIdAccount = function (req, res) {
             return res.status(200).json({
                 lixeiras
             })
+        });
+    } catch (error) {
+        console.log('Error: ' + error)
+        return res.status(500).json({
+            error
+        })
+    }
+}
+
+exports.DeleteTrash = function (req, res) {
+    try {
+        var id = req.body.idtrash;
+        Trash.findByIdAndRemove(function (err, id) {
+            console.log('DELETADO TIXINHA')
+            return res.status(204)
         });
     } catch (error) {
         console.log('Error: ' + error)

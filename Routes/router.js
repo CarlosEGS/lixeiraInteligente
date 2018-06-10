@@ -18,4 +18,9 @@ router.post('/CreateTrash', function(req, res) {
 router.get('/FindAllByIdAccount', function(req, res) {
     TrashController.FindAllByIdAccount(req, res);
 })
+
+router.delete('/DeleteTrash', function(req, res) {
+    TrashController.DeleteTrash(req, res);
+})
+
 module.exports = router;
